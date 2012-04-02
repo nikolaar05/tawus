@@ -114,7 +114,7 @@ qq.remove = function(element)
 
 qq.contains = function(parent, descendant)
 {
-   // compareposition returns false in this case
+   // compare position returns false in this case
    if (parent == descendant)
       return true;
 
@@ -1607,7 +1607,10 @@ qq.extend(qq.UploadHandlerXhr.prototype, {
          xhr.open("POST", queryString, true);
          xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
          xhr.setRequestHeader("X-File-Name", encodeURIComponent(name));
-         xhr.setRequestHeader("Content-Type", "application/octet-stream");
+         
+         // issue: https://github.com/valums/file-uploader/pull/206
+         //xhr.setRequestHeader("Content-Type", "application/octet-stream");
+         xhr.setRequestHeader("Content-Type", file.type);
          xhr.send(file);
       },
       _onComplete : function(id, xhr)

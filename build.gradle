@@ -1,6 +1,6 @@
 apply plugin: "idea"
 
-tapestryVersion = "5.3-rc-3-multipledb-SNAPSHOT"
+tapestryVersion = "5.3.2"
 testngVersion = "5.14.9"
 nexusUsername = "tawus"
 nexusPassword = "liridwm"
@@ -9,12 +9,13 @@ subprojects {
     apply plugin: "java"
     apply plugin: "maven"
     apply plugin: "idea"
+    apply plugin: "eclipse"
 
     group = "com.googlecode.tawus"
     version = "0.2-SNAPSHOT"
-    sourceCompatibility = '1.5'
+    sourceCompatibility = '1.6'
 
-    targetCompatibility = '1.5'
+    targetCompatibility = '1.6'
 
     test {
         useTestNG()
